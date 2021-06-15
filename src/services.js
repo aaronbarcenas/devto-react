@@ -1,5 +1,5 @@
 
-const postURL ="https://api.com"   // aqui va la api de Mario
+const postURL ="http://localhost:8080/posts"   // aqui va la api de Mario
 
 
 

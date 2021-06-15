@@ -5,10 +5,8 @@ import "./index.css";
 import HeaderLogo from '../Header/HeaderLogo'
 
 
-
-
 const NewPost = () => {
-    const [imageUrl,setImageUrl]= useState();
+    const [postImage,setImageUrl]= useState();
     const [titlePost, setTitlePost] = useState();
     const [textPost, setTextPost] = useState();
 
@@ -16,7 +14,22 @@ const NewPost = () => {
 
     const submit = (event) => {
         event.preventDefault()
-        newPost({image:imageUrl, titlePost, textPost})
+        //newPost({image:imageUrl, titlePost, textPost, author:'', })
+        newPost ({author:
+            "Israel Salinas",
+            avatar:
+            "https://avatars.githubusercontent.com/u/6852277?v=4",
+            content:textPost,
+            coverUrl:postImage,
+            date:"May 25",
+            day:"25",
+            month:"05",
+            year:"21",
+            imageUrl:"",
+            likes:30,
+            postTags:"#javascript",
+            postTitle:titlePost
+        })
         .then(response =>history.push('/'))
         .catch(error => alert('ocurrio un error, intenta mas tarde'))
     }
@@ -35,7 +48,7 @@ const NewPost = () => {
                 <form className="mb-4  px-5" id="addPostForm" onSubmit={submit} >
                     <div className="border rounded bg-light p-5">
                         <div className="form-group">
-                            <input type="texto" className="form-control w-25" id="imageUrl" placeholder="Add a cover image" onChange={event =>setImageUrl(event.target.value)}/>
+                            <input type="texto" className="form-control w-25" id="postImage" placeholder="Add a cover image" onChange={event =>setImageUrl(event.target.value)}/>
                         </div>
                         <div className="form-group">
                           <input type="text" className="form-control" id="title" aria-describedby="title" placeholder="New post title here..." onChange={event =>setTitlePost(event.target.value)}/>
