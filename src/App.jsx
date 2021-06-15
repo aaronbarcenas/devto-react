@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import NewPost from './components/NewPost';
 
 import Home from "./screens/Home";
 
@@ -11,6 +12,9 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/new">
+              <NewPost />
             </Route>
             {/* <Route exact path="/posts/:id">
             <PostDetail />
