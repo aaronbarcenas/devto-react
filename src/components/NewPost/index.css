@@ -1,0 +1,40 @@
+
+#addPostForm{
+    margin-top: 40px;
+}
+
+#btnAddPost{
+    background-color: #3b49df;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 8px 16px;
+    margin-top: 20px;
+    margin-right: 16px;
+    font-weight: bold;
+}
+
+#btnSaveDraft{
+    background-color: #B5BDC4;
+    color: black;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 8px 16px;
+    margin-top: 20px;
+}
+input#title.form-control{
+    font-size: 3rem;
+    font-family: inherit;
+    font-weight: 900;
+    border: 0;            
+    background: #F8F9FA;
+}
+
+input#content.form-control{
+    border: 0;            
+    background: #F8F9FA;
+    font-family: monospace;
+    min-height: 27px;
+}

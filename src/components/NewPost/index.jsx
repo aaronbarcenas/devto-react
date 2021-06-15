@@ -1,6 +1,8 @@
 import React, { Fragment, useState } from 'react'
 import { useHistory } from "react-router-dom";
 import { newPost } from '../../services';
+import "./index.css";
+
 
 
 const NewPost = () => {
@@ -18,14 +20,14 @@ const NewPost = () => {
     }
 
   return (
-    <Fragment>
+    <Fragment>   
       <div className="container">
         <div className="row">
-            <div className="col-12 mt-2">
+            <div className="col-12 w-75 mt-2">
                 <form className="mb-4  px-5" id="addPostForm" onSubmit={submit} >
                     <div className="border rounded bg-light p-5">
                         <div className="form-group">
-                            <input type="texto" className="form-control w-50" id="imageUrl" placeholder="Add a cover image" onChange={event =>setImageUrl(event.target.value)}/>
+                            <input type="texto" className="form-control w-25" id="imageUrl" placeholder="Add a cover image" onChange={event =>setImageUrl(event.target.value)}/>
                         </div>
                         <div className="form-group">
                           <input type="text" className="form-control" id="title" aria-describedby="title" placeholder="New post title here..." onChange={event =>setTitlePost(event.target.value)}/>
