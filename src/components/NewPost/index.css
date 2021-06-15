@@ -1,4 +1,8 @@
 
+body{
+    background-color: #eef0f1;;
+}
+
 #addPostForm{
     margin-top: 40px;
 }
@@ -36,5 +40,5 @@ input#content.form-control{
     border: 0;            
     background: #F8F9FA;
     font-family: monospace;
-    min-height: 27px;
+    font-size: larger;
 }

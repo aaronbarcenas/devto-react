@@ -2,6 +2,8 @@ import React, { Fragment, useState } from 'react'
 import { useHistory } from "react-router-dom";
 import { newPost } from '../../services';
 import "./index.css";
+import HeaderLogo from '../Header/HeaderLogo'
+
 
 
 
@@ -20,7 +22,13 @@ const NewPost = () => {
     }
 
   return (
-    <Fragment>   
+    <Fragment>  
+    <div className="container">
+        <span className="headerlogo ">
+        <HeaderLogo />
+        </span>
+        <b>Create a Post</b>
+        </div> 
       <div className="container">
         <div className="row">
             <div className="col-12 w-75 mt-2">
