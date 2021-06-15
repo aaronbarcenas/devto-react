@@ -9,7 +9,7 @@ const Posts = () => {
       <div className="card mb-3">
         <div className="card-body card-body-padding">
           <div className="container">
-            <div className="row">
+            <div className="d-flex flex-row">
               <div className="mb-2">
                 <img
                   className="rounded-circle"
@@ -28,7 +28,7 @@ const Posts = () => {
             </div>
           </div>
           <div className="text-movile" to="/">
-            <h4 className="card-title text-dark font-weight-bolder ms-4 mb-1 title-hx">
+            <h4 className="card-title text-dark fw-bolder ms-4 mb-1 title-hx">
               How to make a mouse ripple click effect with CSS, JS and HTML in 2
               steps 🖱️⚪
             </h4>

@@ -9,6 +9,12 @@ class Container extends React.Component {
         <container className="col-12 col-md-9 col-xl-7 padding-zero">
           <Navbar/>
           <Posts/>
+          <Posts/>
+          <Posts/>
+          <Posts/>
+          <Posts/>
+          <Posts/>
+          <Posts/>
         </container>
       </Fragment>
     )
