@@ -18,7 +18,7 @@ class App extends React.Component {
             <Route exact path="/new">
               <NewPost />
             </Route>
-            <Route exact path="/posts">
+            <Route exact path="/posts/:_id">
               <PostDetail />
             </Route>
           </Switch>

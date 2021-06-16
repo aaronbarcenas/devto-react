@@ -1,6 +1,18 @@
-import React, { Fragment } from "react";
+import React, { useState, useEffect, Fragment } from "react";
+import { useParams } from "react-router";
 
 const MainCard = () => {
+  const {_id} = useParams()
+
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    fetch(`http://localhost:8080/posts/${_id}`)
+      .then(response => response.json())
+      .then(json => setData(json))
+  }, []);
+
+  console.log(data.data)
   return (
     <Fragment>
       <div className="col-12 col-md-9 col-lg-6 p-0 " id="main">
@@ -8,15 +20,16 @@ const MainCard = () => {
           <div className="col-12 d-flex p-0 p-md-2">
             <div className="card d-flex w-100">
               <img
-                src="https://picsum.photos/800/351"
+                src={data.data && data.data.post.coverUrl}
                 className="card-img-top img-fluid"
                 style={{ maxHeight: "350px" }}
                 id="detail-img"
+                alt='mainPic'
               />
               <div className="card-body" id="detail-id">
                 <h5 className="card-title pl-5" style={{ fontSize: "2rem" }}>
                   <b id="detail-title" style={{ fontSize: "48px" }}>
-                    a
+                    {data.data && data.data.post.postTitle}
                   </b>
                 </h5>
                 <p
@@ -28,7 +41,7 @@ const MainCard = () => {
                   }}
                 >
                   <span className="tag-button bg-danger" id="detail-tags">
-                    #Javascript
+                    {data.data && data.data.post.postTags}
                   </span>{" "}
                   <span className="tag-button bg-dark">#SQL</span>{" "}
                   <span className="tag-button bg-success">#Technology</span>{" "}
@@ -36,7 +49,7 @@ const MainCard = () => {
                 </p>
                 <div className="media mb-2">
                   <img
-                    src="https://picsum.photos/seed/picsum/200/300"
+                    src={data.data && data.data.post.avatar}
                     className="mr-2"
                     alt="Generic placeholder image"
                     style={{
@@ -52,7 +65,7 @@ const MainCard = () => {
                       marginLeft: "10px",
                     }}
                   >
-                    <b>Israel Salinas</b>
+                    <b>{data.data && data.data.post.author}</b>
                   </span>
                   <span
                     className="gray-text"
@@ -63,7 +76,7 @@ const MainCard = () => {
                     }}
                     id="detail-date"
                   >
-                    March 15 2021
+                    {data.data && data.data.post.date}
                   </span>
 
                   <div className="media-body container-fluid">
@@ -72,11 +85,7 @@ const MainCard = () => {
                       className="mt-5 d-flex text-justify"
                       style={{ fontSize: "20px" }}
                     >
-                      Hello folks, In my last article, I explained how you can
-                      get started with Tailwind and React by creating a simple
-                      login form. In that, we started with a bare minimum form
-                      structure. In this article, let's work on the same login
-                      form and implement responsiveness. Before we get started,
+                      {data.data && data.data.post.content}
                     </p>
                   </div>
                 </div>

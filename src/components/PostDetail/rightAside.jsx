@@ -1,6 +1,21 @@
-import React, { Fragment } from "react";
+import React, {useEffect, useState, Fragment } from "react";
+import { useParams } from "react-router";
 
 const RightAside = () => {
+  const {_id} = useParams()
+
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    fetch(`http://localhost:8080/posts/${_id}`)
+      .then(response => response.json())
+      .then(json => setData(json))
+  }, []);
+
+  console.log(data.data)
+
+
+
   return (
     <Fragment>
       <div
@@ -19,26 +34,26 @@ const RightAside = () => {
           <div className="card-header">
             <a className="d-flex">
               <span className="mr-2 mb-4">
-                {" "}
+
                 <img
-                  src="assets/images/usuarioPic.jpg"
+                  src={data.data && data.data.post.avatar}
                   className="rounded-circle mw-100 mb-1"
                   alt=""
                 />
               </span>
-              <span>Sm0ke</span>
+              <span className='mx-4'>{data.data && data.data.post.author}</span>
             </a>
           </div>
           <div className="card-body">
-            <a href="#" className="btn btn-follow btn-md btn-block mb-2">
+            <a href="/" className="btn btn-follow btn-md btn-block mb-2">
               Follow
             </a>
             <span className="card-text d-block">Location</span>
-            <span className="card-text d-block">Tokyo</span>
-            <span className="card-text d-block">
+            <span className="card-text d-block">Azcapotzalco</span>
+            <span className="card-text d-flex justify-content-end mt-3">
               <small>JOINED</small>
             </span>
-            <span className="card-text d-block">20 de jul. de 2018</span>
+            <small><span className="card-text d-flex justify-content-end">20 de jul. de 2018</span></small>
           </div>
         </div>
         <div className="card mt-3">

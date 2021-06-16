@@ -17,7 +17,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li class="nav-item">
-                <Link class="nav-link link-sw" to="/weekk">
+                <Link class="nav-link link-sw" to="/week">
                   Week
                 </Link>
               </li>
