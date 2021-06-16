@@ -7,6 +7,8 @@ import Discuss from './Discuss';
 import ExplainLike from './ExplainLike';
 import Challenge from './Challenge';
 
+import './index.css'
+
 class RightAside extends React.Component {
   render() {
     return (

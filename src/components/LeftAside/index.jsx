@@ -3,6 +3,7 @@ import Menu from "./Menu";
 import Tags from './Tags'
 import Shop from './Shop'
 
+import './index.css'
 class LeftAside extends React.Component {
   render() {
     return (

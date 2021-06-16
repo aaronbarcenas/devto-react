@@ -2,6 +2,8 @@ import React, { Fragment } from 'react';
 import Navbar from './Navbar';
 import Posts from './Posts'
 
+import './index.css'
+
 class Container extends React.Component {
   render() {
     return (

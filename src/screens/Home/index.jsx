@@ -6,6 +6,7 @@ import Container from '../../components/Container'
 import RightAside from "../../components/RightAside";
 import Footer from "../../components/Footer";
 
+
 export default function Home() {
   return (
     <React.Fragment>

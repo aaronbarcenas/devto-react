@@ -5,6 +5,8 @@ import Icons from './Icons'
 import Info from './Info'
 import Sloth  from './Sloth'
 
+import './index.css'
+
 class Footer extends React.Component {
   render() {
     return (
