@@ -10,8 +10,8 @@ class PostDetail extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div class="container-fluid bgcolor">
-          <div class="row">
+        <div className="container-fluid bgcolor">
+          <div className="row">
             <LeftAside />
             <MainCard />
             <RightAside />
