@@ -18,8 +18,12 @@ const Stories = () => {
           </p>
         </div>
         <ul className="list-group list-group-flush">
-          <li className="list-group-item">Nevertheless, she coded: Celine Surai</li>
-          <li className="list-group-item">Nevertheless, she coded: Shufaa Yakut</li>
+          <li className="list-group-item">
+            Nevertheless, she coded: Celine Surai
+          </li>
+          <li className="list-group-item">
+            Nevertheless, she coded: Shufaa Yakut
+          </li>
           <li className="list-group-item">
             Nevertheless, she coded: Carol Kariuki
           </li>
@@ -36,7 +40,7 @@ const Stories = () => {
               Share Your Story
             </button>
           </Link>
-          <Link to="/" className="card-link">
+          <Link to="/" className="">
             <button
               type="button"
               className="btn btn-secondary btn-lg color-light-grey py-1 w-100 mt-2"
