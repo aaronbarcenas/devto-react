@@ -4,6 +4,7 @@ import NewPost from './components/NewPost';
 import SideNavRight from "./components/SideNavRight";
 
 import Home from "./screens/Home";
+import PostDetail from "./screens/PostDetail";
 
 class App extends React.Component {
   render() {
@@ -22,16 +23,16 @@ class App extends React.Component {
             <Route exact path="/new">
               <NewPost />
             </Route>
-            {/* <Route exact path="/posts/:id">
-            <PostDetail />
-          </Route>
-          <Route exact path="/posts/:id/update">
-            <UpdatePost />
-          </Route>
-          <Route exact path="/createPost">
-            <AddPost />
-          </Route>
-          <Route exact path="/login" component={Login} /> */}
+            <Route exact path="/posts/">
+              <PostDetail />
+            </Route>
+            {/* <Route exact path="/posts/:id/update">
+              <UpdatePost />
+            </Route>
+            <Route exact path="/createPost">
+              <AddPost />
+            </Route>
+            <Route exact path="/login" component={Login} /> */}
           </Switch>
         </div>
       </Router>
