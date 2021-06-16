@@ -555,3 +555,8 @@ a {
       display: block;
     }
   }
+
+  .LINK:hover {
+    text-decoration: none;
+    color: blue;
+  }

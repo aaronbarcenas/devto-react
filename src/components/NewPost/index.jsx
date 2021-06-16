@@ -27,7 +27,7 @@ const NewPost = () => {
       postTags: "#javascript",
       postTitle: titlePost,
     })
-      .then((response) => history.push("/posts"))
+      .then((response) => history.push("/"))
       .catch((error) => alert("ocurrio un error, intenta mas tarde"));
   };
 

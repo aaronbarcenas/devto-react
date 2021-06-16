@@ -7,28 +7,30 @@ import instagram from "../../images/instagram-icon.svg";
 import twitch from "../../images/twitch-icon.svg";
 import hojita from "../../images/forem-logo.svg";
 
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <Fragment>
       <footer>
         <div id="first-div">
-          <a href="">Home</a>
-          <a href="">Reading List</a>
-          <a href="">Listings</a>
-          <a href="">Podcasts</a>
-          <a href="">Videos</a>
-          <a href="">Tags</a>
-          <a href="">Code of Conduct</a>
-          <a href="">FAQ</a>
+          <Link className="LINK">Home</Link>
+          <Link className="LINK">Reading List</Link>
+          <Link className="LINK">Listings</Link>
+          <Link className="LINK">Podcasts</Link>
+          <Link className="LINK">Videos</Link>
+          <Link className="LINK">Tags</Link>
+          <Link className="LINK">Code of Conduct</Link>
+          <Link className="LINK">FAQ</Link>
         </div>
         <div>
-          <a href="">DEV Shop</a>
-          <a href="">Sponsors</a>
-          <a href="">About</a>
-          <a href="">Privacy policy</a>
-          <a href="">Terms of use</a>
-          <a href="">Contact</a>
-          <a href="">Write a post</a>
+          <Link className="LINK">DEV Shop</Link>
+          <Link className="LINK">Sponsors</Link>
+          <Link className="LINK">About</Link>
+          <Link className="LINK">Privacy policy</Link>
+          <Link className="LINK">Terms of use</Link>
+          <Link className="LINK">Contact</Link>
+          <Link className="LINK">Write a post</Link>
         </div>
         <div className="social-media">
           <img src={twitter} alt="" />
