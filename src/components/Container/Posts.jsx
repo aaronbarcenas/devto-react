@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import heart from "../../images/heart-icon.svg";
 import comment from "../../images/comment-icon.svg";
+import { useHistory } from "react-router";
 
 const Posts = () => {
   return (

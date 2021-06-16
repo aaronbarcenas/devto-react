@@ -11,3 +11,13 @@ export const newPost = async (data) => {
     });
     return await response.json();
   };
+
+
+  export const getPosts = async () => {
+    try {
+      const response = await fetch(postURL);
+      return await response.json();
+    } catch (error) {
+      console.log(error);
+    }
+  };
