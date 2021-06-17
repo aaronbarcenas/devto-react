@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
+import React, { Fragment, useEffect, useState } from "react";
+import { Link} from "react-router-dom";
 import heart from "../../images/heart-icon.svg";
 import comment from "../../images/comment-icon.svg";
 import Tags from "./tags";
@@ -10,7 +10,9 @@ import Navbar from "./Navbar";
 
 export default function Container(props) {
   const buildPost = ({ _id, author, avatar, content, coverUrl, date, likes, postTags, postTitle }) => {
+    console.log(_id, author)
     return (
+      
       <div className="card mb-3" uniqueKey={_id}>
         <div className="card-body card-body-padding">
           <div className="container">
@@ -18,16 +20,16 @@ export default function Container(props) {
               <div className="mb-2">
                 <img
                   className="rounded-circle"
-                  src={ props.data[2][1] && avatar}
+                  src={ avatar}
                   alt="..."
                   width="40"
                   height="40"
                 />
               </div>
               <div className="ms-2">
-                <h6 className="mb-0">{props.data[2][1] && author}</h6>
+                <h6 className="mb-0">{author}</h6>
                 <p className="card-text">
-                  <small className="text-muted">{props.data[2][1] && date} (2 months ago)</small>
+                  <small className="text-muted">{date} (2 months ago)</small>
                 </p>
               </div>
             </div>
@@ -35,7 +37,7 @@ export default function Container(props) {
           <a href={`/posts/${_id}`}> 
           <div className="text-movile" to="/">
             <h4 className="card-title text-dark fw-bolder ms-4 mb-1 title-hx">
-              {props.data[2][1] && postTitle}
+              {postTitle}
             </h4>
             <nav className="nav ms-md-3">
               <Tags data={postTags}/>
@@ -45,18 +47,18 @@ export default function Container(props) {
           <div className="row d-flex justify-content-between">
             <div className="col-6 col-md-8 pe-0 ps-0 ps-md-3">
               <nav className="nav ms-md-4 ms-1">
-                <a
+                <Link
                   className="nav-link d-flex flex-row align-items-center ps-1 pe-0"
-                  href="/"
+                  to="/" onClick={() => props.onLikeClick(_id)}
                 >
-                  <img src={ heart} alt="" width="30" height="30" />
+                  <img src={ heart} alt="" width="30" height="30"/>
                   <p className="nav-link card-text ps-0">
                     <small className="text-muted d-flex w-100">
-                      {props.data[2][1] && likes}
+                      {likes}
                       <span className="d-none d-md-block ps-1">reactions</span>
                     </small>
                   </p>
-                </a>
+                </Link>
                 <a
                   className="nav-link d-flex flex-row align-items-center px-0"
                   href="/"
@@ -89,8 +91,8 @@ export default function Container(props) {
       </div>
     );
   };
-if(props.data[2]){
-    const postUI = props.data[2][1].posts.map(buildPost);
+if(props.data){
+    const postUI = props.data.map(buildPost);
     return (
       <Fragment>
         <container className="col-12 col-md-9 col-xl-7 padding-zero">

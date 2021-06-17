@@ -9,15 +9,33 @@ import Footer from "../../components/Footer";
 import { getPosts } from "../../services";
 
 export default function Home() {
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     const request = async () => {
       const json = await getPosts();
-      setData(json);
+      setData(json.data.posts);
     };
     request();
   }, []);
+
+  const onLikeClick = async (id) => {
+    const response = await fetch(`http://localhost:8080/posts/${id}`, {
+      method: "PATCH",
+    });
+    const json = await response.json();
+
+    const updatedPosts = data.map((el, ind) => {
+      var newEl = el
+      if(el._id === json.data.newlikes._id){
+        newEl['likes'] = json.data.newlikes.likes
+        console.log(json.data.newlikes.likes)
+      }
+      return newEl;
+    });
+    console.log(updatedPosts)
+    setData(updatedPosts);
+  };
 
   return (
     <React.Fragment>
@@ -26,7 +44,8 @@ export default function Home() {
         <div className="row">
           <LeftAside />
           <Container
-            data={Object.entries(data).length ? Object.entries(data) : []}
+            data={data.length ? data : []}
+            onLikeClick={onLikeClick}
           />
           <RightAside />
         </div>
